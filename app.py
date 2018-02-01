@@ -73,7 +73,18 @@ def add_job():
 ############ LOGIN ############
 @app.route('/', methods=['GET', 'POST'])
 def login():
-    return login_handler(request)
+    # return login_handler(request)
+
+    if request.method == 'GET':
+        return render_template('sign_in.html')
+
+    email = request.form['email']
+    password = request.form['pw']
+    if(session.query(User).filter_by(email = email).one()!= None and session.query(User).filter_by(email = email).one().check_password(password) and email != "" and password != ""):
+        return redirect(url_for('home'))
+    else:
+        flash ("Email/Password is incorrect")
+        return redirect(url_for('login'))
 
 
 
