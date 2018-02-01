@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Home</title>
+
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+  </head>
+  <body class="body1">
+<ul>
+  <li><a href="{{url_for('home')}}"><h4>Home</h4></a></li>
+  <li><a class="active" href=""><h4>Add job</h4></a></li>
+  <li><a href="{{url_for('about')}}"><h4>About Us</h4></a></li>
+  </ul>
+<div>
+  <h5>Add A Job Offer</h5> 
+ <!--  {{current_user.name}} -->
+ <center>
+  <form action="{{url_for('add_job')}}"  method='post'>
+  <table>
+  <tr><td><h3> Job </h3></td> 
+  <td><input type="text" name="job" placeholder="job" class="userinputs"></td></tr>
+  <tr><td><h3> further description about the job and the place and any requirments  </h3></td>
+  <td><input type="text" name="about" placeholder="Short Description" class="userinputs"></td></tr>
+  <tr><td><h3> frequency (one-time/part-time/full-time) </h3> </td>
+  <td><input type="text" name="frequency" placeholder="How often?" class="userinputs"></td></tr>
+  <tr><td><h3> Date </h3></td> 
+  <td><input type="text" name="date" placeholder="date" class="userinputs"></td></tr>
+  <tr><td><h3 class=""> Payment </h3> </td>
+  <td><input type="text" name="payment" placeholder="payment" class="userinputs"></td></tr>
+  <tr><td><h3> Picture </h3></td> 
+  <td><input type="text" name="picture" placeholder="picture" class="userinputs"></td></tr>
+  </table>
+  </center>
+</div>
+</br>
+</br>
+<center>
+<div class="publish_button">
+  <button type="submit" class="button">Publish</button>
+</center>
+  </form>
+</div>
+  </body>
+</html>

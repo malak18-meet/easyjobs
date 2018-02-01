@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Your job offers</title>
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </head>
+  <body class="body1">
+  <div>
+  <ul>
+  <li><a class="active" href=""><h4>Home</h4></a></li>
+  <li><a href="{{url_for('add_job')}}"><h4>Add job</h4></a></li>
+  <li><a href="{{url_for('about')}}"><h4>About Us</h4></a></li>
+  </ul>
+  <h5>Your Job Offers</h5> 
+  </div>
+       <div id="main">
+        {% for job in Jobs %}
+          <div class="jobs_container">
+            <div class="">
+              <a href="{{url_for('show_job',job_id=job.id)}}"><div class="job-name">{{job.job}}</div></a>
+            </div>
+            <div class="job-footer">
+              <div class="job-about">{{job.about}}</div>
+              <div class="job-date">{{job.date}}</div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      
+    </div>
+
+  </body>
+</html>

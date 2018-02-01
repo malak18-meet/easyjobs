@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>Home</title>
+
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+  </head>
+
+	<body class="body1">
+ <ul>
+  <li><a href="{{url_for('home')}}"><h4>Home</h4></a></li>
+  <li><a href="{{url_for('add_job')}}"><h4>Add job</h4></a></li>
+  <li><a class="active" href=""><h4>About Us</h4></a></li>
+  </ul>
+
+   <h5>About Us </h5> 
+   <div align="justify" class="jobs_container">
+    <h3>Every person , family , parent will need help at some point be it for the children , for the house and even for pets and every teenager needs extra money and that is why we offer  A platform that will connect teenagers with people who are in need of help or easy jobs such as babysitting , carpooling , petcare , house-sitting , tutoring .
+    </h3>
+    <h3>Our main goal is Providing teenagers who are in need of jobs easy jobs from people who are in need of help, the jobs that we offer will be babysitting , carpooling , tutoring , pet care , house-sitting ,tutoring .
+ </h3></div>
+	</body>
+</html>

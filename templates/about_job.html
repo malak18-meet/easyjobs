@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Idea</title>
+
+
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+      
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+</head>
+<body class="body1">
+ <ul>
+  <li><a href="{{url_for('home')}}"><h4>Home</h4></a></li>
+  <li><a href="{{url_for('add_job')}}"><h4>Add job</h4></a></li>
+  <li><a href="{{url_for('about')}}"><h4>About Us</h4></a></li>
+  </ul>
+  <br>
+  <br>
+<div class="">
+<img class="img1" src="{{job.picture}}" width="250" height="250">
+<h5>{{job.job}}</h5>
+<div class="jobs_container"> 
+ <center>
+<h3>About: {{job.about}}</h3>
+<h3>frequency: {{job.frequency}}</h3>
+<h3>Date: {{job.date}}</h3>
+<h3>Payment: {{job.payment}}</h3>
+<br>
+<br>
+<br>
+<div class="alert alert-info">
+    <strong>Apply!</strong> Click here <a href="{{url_for('apply',job_id=job.id)}}" class="alert-link">To apply </a>.
+  </div>
+<!-- <button type="submit" class="button">Apply</button> -->
+</center>
+</div>
+</div>
+  </body>
+</html>

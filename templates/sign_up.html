@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Sign Up</title>
+
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+      <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/style.css') }}">
+
+      <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+      <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+  </head>
+  <body class="body1">
+<center>
+
+          <div>
+        <table>
+        <h2> Sign up </h2> 
+        <form action="{{url_for('sign_up')}}" method="post">
+
+        <tr><td><h3> firstname </h3></td>
+        <td><input type="text" placeholder="Enter firstname" class="userinputs" name="firstname"></td></tr>
+        <tr><td><h3> lastname  </h3></td>
+        <td><input type="text" placeholder="Enter last name" class="userinputs" name="lastname"></td></tr>
+        <tr><td><h3> password </h3></td>
+        <td><input type="password" placeholder="Enter password" class="userinputs" name="pass"></td></tr>
+        <tr><td><h3> email </h3></td>
+        <td><input type="email" placeholder="Enter email" class="userinputs" name="email"></td></tr> 
+        <tr><td><h3> photo </h3></td>
+        <td><input type="text" placeholder="choose a photo" class="userinputs" name="photo"> </td></tr>
+        <br>
+        </table>
+        <input type="submit" name="sign_up" class="button">
+
+        </form>
+        
+        </div>
+</center>
+  </body>
+</html>
