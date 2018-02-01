@@ -71,7 +71,7 @@ def add_job():
 
 
 ############ LOGIN ############
-@app.route('/sign_in', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def login():
     return login_handler(request)
 
